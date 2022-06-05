@@ -1,4 +1,5 @@
 lxml
+jinja2
 anyio~=3.6.1
 colorama~=0.4.4
 httpx[http2]~=0.23.0

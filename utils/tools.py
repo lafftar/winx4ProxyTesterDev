@@ -1,3 +1,4 @@
+import socket
 from json import dumps, JSONDecodeError, loads
 from typing import Union
 
@@ -6,6 +7,11 @@ from bs4 import BeautifulSoup
 from colorama import Fore, Back, Style
 from utils.root import get_project_root
 from utils.terminal import color_wrap
+
+
+"""
+General FX.
+"""
 
 
 def print_req_obj(req: httpx.Request, res: Union[httpx.Response, None] = None, print_now: bool = False) -> str:
@@ -77,3 +83,11 @@ def print_req_info(res: httpx.Response, print_headers: bool = False, print_body:
         print(resp.url, end='\n')
     print()
     print(boundary)
+
+
+def get_free_port():
+    s = socket.socket()
+    s.bind(('', 0))
+    port = s.getsockname()[1]
+    s.close()
+    return port
