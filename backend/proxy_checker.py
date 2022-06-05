@@ -1,0 +1,4 @@
+
+
+class ProxyChecker:
+    pass
