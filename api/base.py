@@ -14,7 +14,7 @@ from utils.root import get_project_root
 templates = Jinja2Templates(directory="templates")
 
 routes = [
-    Mount(f'{get_project_root()}/static', StaticFiles(directory='static'), name='static')
+    Mount(f'/static', StaticFiles(directory='static'), name='static')
 ]
 
 app = FastAPI(routes=routes)
