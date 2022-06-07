@@ -6,39 +6,58 @@
     <title>Winx4 Test</title>
 
     <!-- My stuff -->
-    <script defer type="text/javascript" src="/static/js/main.js"></script>
-    <script defer type="text/javascript" src="/static/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/static/js/socket.io.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/static/js/main.js"></script>
     <link rel="stylesheet" type= "text/css" href="/static/css/bg.css">
     <link rel="stylesheet" type= "text/css" href="/static/css/bootstrap.min.css">
-
-    <!--Font-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
-
-<!--    External JS-->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
-            integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
-            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 </head>
 <body>
 <div class="w-100 h-100 d-flex flex-column align-items-center justify-content-center ">
     <div class="d-flex flex-column justify-content-center align-items-center">
-        <h1 class="fw-light text-white m-0">Pure CSS Gradient Background Animation</h1>
+        <h1 class="fw-light text-white m-0 logo">winx4</h1>
         <div class="btn-group my-5">
-            <a href="https://codepen-api-export-production.s3.us-west-2.amazonaws.com/zip/PEN/pyBNzX/1578778289271/
-            pure-css-gradient-background-animation.zip" class="btn btn-outline-light" aria-current="page">
-                <i class="fas fa-file-download me-2"></i> SOURCE CODE</a>
-            <a href="https://codepen.io/P1N2O/full/pyBNzX" class="btn btn-outline-light">
-                FULL SCREEN <i class="fas fa-expand ms-2"></i></a>
+            <a href="#" class="btn btn-outline-light" onclick="$('#import-proxies-fp').click();">
+                <i class="bi-upload"></i>
+                IMPORT PROXIES
+            </a>
+            <a href="#" class="btn btn-outline-light" onclick="$('#paste-proxies-modal').modal('toggle');">
+                <i class="bi-clipboard-fill"></i>
+                PASTE PROXIES
+            </a>
         </div>
-        <a href="https://manuel.pinto.dev" class="text-decoration-none">
-            <h5 class="fw-light text-white m-0">— Pen by Manuel Pinto —</h5>
-        </a>
     </div>
 </div>
+
+<!--File picker for importing proxies-->
+<input type="file" class="invisible" id="import-proxies-fp">
+
+<!-- Modal for pasting proxies-->
+<div class="modal fade hide" id="paste-proxies-modal" tabindex="-1">
+   <div class="modal-dialog ">
+       <div class="modal-content">
+          <div class="modal-body">
+            <textarea class="col-12" rows="12" id="paste-proxies-textarea"></textarea>
+          </div>
+           <div class="modal-footer justify-content-center">
+            <a href="#" class="btn btn-outline-dark" onclick="">
+                <i class="bi-ui-checks"></i>
+                CHECK PROXIES
+            </a>
+          </div>
+       </div>
+  </div>
+</div>
+
+<!--Just making it ez to edit this modal right away.-->
+<script type="text/javascript">
+    $(document).ready( ($) => {
+     $('#paste-proxies-modal').modal('toggle')
+    }
+    );
+</script>
+
 </body>
 </html>
