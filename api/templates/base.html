@@ -51,10 +51,48 @@
   </div>
 </div>
 
+<!--Modal for checking.-->
+<div class="modal fade hide" id="checking-proxies-modal" tabindex="-1">
+   <div class="modal-dialog">
+       <div class="modal-content">
+          <div class="modal-body justify-content-center align-items-center">
+            <div class="spinner-border"></div>
+              <br>
+              <br>
+              <h4>Checked 0 Proxies.</h4>
+              <br>
+
+              <table class="table-bordered justify-content-between align-content-between">
+                <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                        <th scope="col">IP</th>
+                        <th scope="col">PORT</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>1.1.1.1</td>
+                        <td>3128</td>
+                    </tr>
+                  </tbody>
+              </table>
+          </div>
+           <div class="modal-footer justify-content-center">
+            <a href="#" class="btn btn-outline-dark" onclick="">
+                <i class="bi-stop-circle"></i>
+                STOP
+            </a>
+          </div>
+       </div>
+  </div>
+</div>
+
 <!--Just making it ez to edit this modal right away.-->
 <script type="text/javascript">
     $(document).ready( ($) => {
-     $('#paste-proxies-modal').modal('toggle')
+     $('#checking-proxies-modal').modal('toggle')
     }
     );
 </script>
